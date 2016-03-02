@@ -1,0 +1,64 @@
+{
+    "magName": "",
+
+    "children": [
+        {
+            "magName": "TVCG",
+            "children": [
+                {
+                    "keyword": "algorithm design and analysis",
+                    "magName": "TVCG",
+                    "paperName":"",
+                    "value": 10,
+                    "year": "2006"
+                },
+                {
+                    "keyword": "algorithms",
+                    "paperName":"",
+                    "magName": "TVCG",
+                    "paperName":"<algorithm design and analysis3> <algorithm design and analysis3>",
+                    "value": 30,
+                    "year": "2006"
+                }
+            ]      
+        },
+        {
+              "magName": "TKDE",
+              "children": [
+                {
+                    "keyword": "algorithm design and analysis",
+                    "magName": "TVCG",
+                    "paperName":"",
+                    "value": 10,
+                    "year": "2006"
+                },
+                {
+                    "keyword": "algorithms",
+                    "magName": "TVCG",
+                    "paperName":"",
+                    "value": 30,
+                    "year": "2006"
+                }
+            ]
+        },
+        {
+              "magName": "TMM",
+              "children": [
+                {
+                    "keyword": "algorithm design and analysis",
+                    "magName": "TVCG",
+                    "paperName":"",
+                    "value": 10,
+                    "year": "2006"
+                },
+                {
+                    "keyword": "algorithms",
+                    "magName": "TVCG",
+                    "paperName":"<algorithm design and analysis3> <algorithm design and analysis3>",
+                    "value": 30,
+                    "year": "2006"
+                }
+            ]
+        }
+    ]
+}

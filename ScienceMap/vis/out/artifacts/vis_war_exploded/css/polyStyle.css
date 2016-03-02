@@ -1,0 +1,19 @@
+text{
+    font: 17px sans-serif bold;
+}
+
+/*背景中虚线的样式*/
+.dash path{
+    stroke: black;
+    stroke-width: 3px;
+}
+
+/*围绕着多边形的字的样式*/
+.rotate_text text {
+    fill: #8B2252;
+    font: 20px sans-serif;
+}
+
+.window_text text{
+    fill: #8B2252;
+}

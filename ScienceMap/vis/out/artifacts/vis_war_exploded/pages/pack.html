@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="../css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/ostyle.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/gh-buttons.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/prettify.css"/>
+    <script src="/js/d3.js"></script>
+</head>
+<body>
+<div id="Header" class="button-group"></div>
+<div>
+    <text class="Year">Magzines in 2006</text>
+</div>
+<div id="Container">
+    <div id="Content">
+        <!--<div id="Content-Left">-->
+            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="ledgend">Click buttons at top.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div style="color:#F00">&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="important">The circles with thick <tspan style="color:#00F;font-size:30px">BLUE</tspan> stroke firstly appears at that year.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<text>&ndash;&gt;-->
+                <!--&lt;!&ndash;Legend&Manual&ndash;&gt;-->
+            <!--&lt;!&ndash;</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="ledgend">Circles with single color comes from one single magzine.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div style="color:#F00">&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="important">Move mouse over a certain circle to see the name of the research.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="ledgend">Ccombined color means the research appears in both or all magzines.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div style="color:#F00">&ndash;&gt;-->
+                <!--&lt;!&ndash;<text class="important">Move mouse over the circles to see the relations between magzines.</text>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div id="table"></div>&ndash;&gt;-->
+        <!--</div>-->
+        <div id="Content-Main">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/otherfunctions.js"></script>
+<script src="../js/multext.js" charset="utf-8"></script>
+<script>
+    var table1 = d3.select("#table").append("foreignobject").append("table")
+            .attr("class", "pos_abs")
+            .attr("width", 250)
+            .attr("cellspacing", 0)
+            .attr('cellpadding', 0)
+            .attr("border", 0);
+    var tr1 = table1.append("tr");
+    tr1.append("td")
+            .attr("width", "30%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:14px;text-align:center;font-family:Times New Roman;font-size:10px")
+            .text("Magzine");
+    tr1.append("td")
+            .attr("width", "35%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:10px;text-align:center;font-family:Times New Roman")
+            .text("Lightest");
+    tr1.append("td")
+            .attr("width", "35%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:10px;text-align:center;font-family:Times New Roman")
+            .text("Heaviest");
+    var trs = table1.append("tr");
+    trs.append("td")
+            .attr("width", "50%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:10px;text-align:center;font-family:Times New Roman")
+            .text("TKDE");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#FFFACD");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#FFA500");
+    var trs = table1.append("tr");
+    trs.append("td")
+            .attr("width", "50%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:10px;text-align:center;font-family:Times New Roman")
+            .text("TMM");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#A8FF24");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#006000");
+    var trs = table1.append("tr");
+    trs.append("td")
+            .attr("width", "50%")
+            .attr("scope", "col")
+            .attr("style", "border:1px solid #ccc;background:#fff;line-height:37px;color:#999;font-size:14px;text-align:center;font-family:Times New Roman;font-size:16px")
+            .text("TVCG");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#FF5151");
+    trs.append("td").attr("width", 60).attr("bgcolor", "#600000");
+
+    dataset = ["2006", "2006-2007", "2006-2008",
+        "2006-2009", "2006-2010", "2006-2011",
+        "2006-2012", "2006-2013"];
+    var width = 1280,
+            height = 800,
+            r = 800,
+            x = d3.scale.linear().range([0, r]).domain([0, r]),
+            y = d3.scale.linear().range([0, r]).domain([0, r]);
+    var linear = d3.scale.linear()
+            .domain([1, 150])
+            .range([0, 1]);
+    var a1 = d3.rgb("#FFFACD");
+    var a2 = d3.rgb("#A8FF24");
+    var a3 = d3.rgb("#FF5151");
+    var b = d3.rgb("#FFA500");
+    var c = d3.rgb("#006000");
+    var d = d3.rgb("#600000");
+    var compute1 = d3.interpolate(a1, b);
+    var compute2 = d3.interpolate(a2, c);
+    var compute3 = d3.interpolate(a3, d);
+    var pack = d3.layout.pack()
+            .size([r, r]);
+    var thisyear = "2010";
+    var vis = d3.select("#Content-Main").insert("svg:svg", "h2")
+            .attr("width", width)
+            .attr("height", height)
+            .append("svg:g")
+            .attr("transform", "translate(" + (width - r) / 2 + "," + (height - r) / 2 + ")");
+    var map = new Map();
+
+    var packMap = function (file) {
+        d3.select("svg").remove();
+        var mag1 = 0, mag2 = 0, mag3 = 0;
+        var node, root;
+        map.clear();
+        var vis = d3.select("#Content-Main").insert("svg:svg", "h2")
+                .attr("width", width)
+                .attr("height", height)
+                .append("svg:g")
+                .attr("transform", "translate(" + (width - r) / 2 + "," + (height - r) / 2 + ")");
+        d3.json(file, function (error, data) {
+            node = root = data;
+//            console.log(root);
+            map.put("First", "0");
+            var nodes = pack.nodes(root);
+            for (var paper in node.children[0].children) {
+                if (!map.containsKey(node.children[0].children[paper].keyword)) {
+                    mag1++;
+                    var rgb = compute1(linear(mag1));
+                    map.put(node.children[0].children[paper].keyword, rgb);
+                }
+            }
+            for (var paper in node.children[1].children) {
+                mag2++;
+                var rgb = compute2(linear(mag2));
+                if (!map.containsKey(node.children[1].children[paper].keyword)) {
+                    map.put(node.children[1].children[paper].keyword, rgb);
+                }
+                else {
+                    var ori = map.get(node.children[1].children[paper].keyword);
+                    map.remove(node.children[1].children[paper].keyword);
+                    var multicolor = colorAdd(rgb, ori);
+                    var newcolor = d3.rgb(multicolor[0], multicolor[1], multicolor[2]);
+//                console.log(newcolor);
+//                console.log(newcolor.toString());
+                    map.put(node.children[1].children[paper].keyword, newcolor.toString());
+                }
+            }
+            for (var paper in node.children[2].children) {
+                mag3++;
+                var rgb = compute3(linear(mag3));
+                if (!map.containsKey(node.children[2].children[paper].keyword)) {
+                    map.put(node.children[2].children[paper].keyword, rgb);
+                }
+                else {
+                    var ori = map.get(node.children[2].children[paper].keyword);
+                    map.remove(node.children[2].children[paper].keyword);
+                    var multicolor = colorAdd(rgb, ori);
+                    var newcolor = d3.rgb(multicolor[0], multicolor[1], multicolor[2]);
+//                console.log(newcolor);
+//                console.log(newcolor.toString());
+                    map.put(node.children[2].children[paper].keyword, newcolor.toString());
+                }
+            }
+
+            var allcircles = vis.selectAll("circle")
+                    .data(nodes)
+                    .enter().append("svg:circle")
+                    .attr("class", function (d) {
+                        return d.children ? "parent" : "child";
+                    })
+                    .attr("cx", function (d) {
+                        return d.x;
+                    })
+                    .attr("cy", function (d) {
+                        return d.y;
+                    })
+                    .attr("r", function (d) {
+                        return d.r;
+                    })
+                    .attr("fill", "#ffffff")
+                    .attr("name", function (d) {
+                        return d.children ? d.magName : d.keyword;
+                    })
+                    .attr("stroke", function (d) {
+                        if (d.children) {
+                            return "#999999";
+                        }
+                        else if (d.year == thisyear) {
+                            return "blue";
+                        }
+                        else {
+                            return "#999";
+                        }
+                    })
+                    .attr("stroke-width", function (d) {
+                        if (d.children) {
+                            return 0;
+                        }
+                        else if (d.year == thisyear) {
+                            return 3;
+                        }
+                        else {
+                            return 0.5;
+                        }
+                    })
+                    .on("click", function (d) {
+                        return d.children ? zoom1(node == d ? root : d) : zoom(d);
+                    })
+                    .on("mouseover", function (d) {
+                        if (!d.children) {
+                            var circles = document.getElementsByName(d.keyword);
+                            d3.selectAll(circles).attr("stroke", "black");
+                            d3.selectAll(circles).attr("stroke-width", 6);
+                            if (circles.length == 1) {
+                                var x1 = x(circles[0].__data__.x);
+                                var y1 = y(circles[0].__data__.y);
+                                vis.append("rect")
+                                        .attr("class", d.keyword + "R")
+                                        .attr("x", x1)
+                                        .attr("y", y1 - height / 20 - d.keyword.length - 20)
+                                        .attr("rx", 4)
+                                        .attr("ry", 4)
+                                        .attr("height", "60px")
+                                        .attr("width", d.keyword.length * 25 + "px")
+                                        .attr("fill", "black")
+                                        .attr("opacity",0.8);
+//                                        .attr("stroke","white")
+//                                        .attr("stroke-width","0.5px");
+//                                        .attr("fill", map.get(d.keyword));
+                                vis.append("text")
+                                        .attr("class", d.keyword + "M")
+                                        .attr("z-index", "-1")
+                                        .attr("x", x1+20)
+                                        .attr("fill","white")
+//                                        .attr("fill", function () {
+//                                            var ori = map.get(d.keyword);
+//                                            var reverse = reverseColor(ori);
+//                                            var newcolor = d3.rgb(reverse[0], reverse[1], reverse[2]);
+//                                            return newcolor.toString();
+//                                        })
+                                        .attr("y", y1 - height / 20 - d.keyword.length+20)
+                                        .text(d.keyword);
+                            }
+                            else if (circles.length == 2) {
+                                var x1 = x(circles[0].__data__.x);
+                                var x2 = x(circles[1].__data__.x);
+                                var y1 = y(circles[0].__data__.y);
+                                var y2 = y(circles[1].__data__.y);
+                                vis.append("line")
+                                        .attr("class", d.keyword + "L")
+                                        .attr("x1", x1)
+                                        .attr("y1", y1)
+                                        .attr("x2", (x1 + x2) / 2)
+                                        .attr("y2", (y1 + y2) / 2)
+                                        .attr("stroke","black");
+                                vis.append("line")
+                                        .attr("class", d.keyword + "L")
+                                        .attr("x1", x2)
+                                        .attr("y1", y2)
+                                        .attr("x2", (x1 + x2) / 2)
+                                        .attr("y2", (y1 + y2) / 2)
+                                        .attr("stroke", "black");
+                                vis.append("rect")
+                                        .attr("id", d.keyword)
+                                        .attr("x", (x1 + x2) / 2)
+                                        .attr("y", (y1 + y2) / 2-40)
+                                        .attr("rx", 4)
+                                        .attr("ry", 4)
+                                        .attr("class", d.keyword + "R")
+                                        .attr("height", "60px")
+                                        .attr("width", d.keyword.length * 25 + "px")
+                                        .attr("fill", "black")
+                                        .attr("opacity",0.8);
+//                                        .attr("fill", map.get(d.keyword));
+                                vis.append("text")
+                                        .attr("class", d.keyword + "M")
+                                        .attr("fill","white")
+//                                        .attr("fill", function () {
+//                                            var ori = map.get(d.keyword);
+//                                            var reverse = reverseColor(ori);
+//                                            var newcolor = d3.rgb(reverse[0], reverse[1], reverse[2]);
+//                                            return newcolor.toString();
+//                                        })
+                                        .attr("pointer-events", "none")
+                                        .attr("x", (x1 + x2) / 2+20)
+                                        .attr("y", (y1 + y2) / 2)
+                                        .text(d.keyword);
+                            }
+                            else if (circles.length == 3) {
+                                var x1 = x(circles[0].__data__.x);
+                                var x2 = x(circles[1].__data__.x);
+                                var x3 = x(circles[2].__data__.x);
+                                var y1 = y(circles[0].__data__.y);
+                                var y2 = y(circles[1].__data__.y);
+                                var y3 = y(circles[2].__data__.y);
+                                vis.append("line")
+                                        .attr("class", d.keyword + "L")
+                                        .attr("x1", x1)
+                                        .attr("y1", y1)
+                                        .attr("x2", (x1 + x2 + x3) / 3)
+                                        .attr("y2", (y1 + y2 + y3) / 3)
+                                        .attr("stroke", "black");
+                                vis.append("line")
+                                        .attr("class", d.keyword + "L")
+                                        .attr("x1", x2)
+                                        .attr("y1", y2)
+                                        .attr("x2", (x1 + x2 + x3) / 3)
+                                        .attr("y2", (y1 + y2 + y3) / 3)
+                                        .attr("stroke", "black");
+                                vis.append("line")
+                                        .attr("class", d.keyword + "L")
+                                        .attr("x1", x3)
+                                        .attr("y1", y3)
+                                        .attr("x2", (x1 + x2 + x3) / 3)
+                                        .attr("y2", (y1 + y2 + y3) / 3)
+                                        .attr("stroke", "black");
+                                vis.append("rect")
+                                        .attr("id", d.keyword)
+                                        .attr("pointer-events", "none")
+                                        .attr("x", (x1 + x2 + x3) / 3)
+                                        .attr("y", (y1 + y3 + y2) / 3 - d.keyword.length - 30)
+                                        .attr("rx", 4)
+                                        .attr("ry", 4)
+                                        .attr("class", d.keyword + "R")
+                                        .attr("height", "60px")
+                                        .attr("width", d.keyword.length * 25 + "px")
+                                        .attr("fill", "black")
+                                        .attr("opacity",0.8);
+//                                        .attr("fill", map.get(d.keyword));
+                                vis.append("text")
+                                        .attr("class", d.keyword + "M")
+                                        .attr("pointer-events", "none")
+                                        .attr("fill","white")
+//                                        .attr("fill", function () {
+//                                            var ori = map.get(d.keyword);
+//                                            var reverse = reverseColor(ori);
+//                                            var newcolor = d3.rgb(reverse[0], reverse[1], reverse[2]);
+//                                            return newcolor.toString();
+//                                        })
+                                        .attr("x", (x1 + x2 + x3) / 3+20)
+                                        .attr("y", (y1 + y3 + y2) / 3)
+                                        .text(d.keyword);
+                            }
+                        }
+                        else {
+                            d3.select(this).attr("stroke", "blue")
+                                    .attr("stroke-width", 20);
+                        }
+                    })
+                    .on("mouseout", function (d) {
+                        d3.select(this)
+                                .attr("stroke", function (d) {
+                                    return d.children ? "#999999" : "#999";
+                                })
+                                .attr("stroke-width", function (d) {
+                                    return d.children ? 0 : 0.5;
+                                });
+                        if (!d.children) {
+                            var circles = document.getElementsByName(d.keyword);
+                            d3.selectAll(circles)
+                                    .attr("stroke", function (d) {
+                                        if (d.year == thisyear) {
+                                            return "blue";
+                                        }
+                                        else {
+                                            return "#999";
+                                        }
+                                    })
+                                    .attr("stroke-width", function (d) {
+                                        if (d.children) {
+                                            return 0;
+                                        }
+                                        else if (d.year == thisyear) {
+                                            return 3;
+                                        }
+                                        else {
+                                            return 0.5;
+                                        }
+                                    });
+                        }
+                        var todeletetext = document.getElementsByClassName(d.keyword + "M");
+                        if (todeletetext.length != 0) {
+                            d3.selectAll(todeletetext).remove();
+                            var todeleteline = document.getElementsByClassName(d.keyword + "L");
+                            var times = todeleteline.length;
+                            for (var i = 0; i < times; i++) {
+                                d3.selectAll(todeleteline).remove();
+                            }
+                            d3.selectAll(document.getElementsByClassName(d.keyword + "R")).remove();
+                        }
+                    });
+            ;
+            allcircles.transition().duration(1000).attr("fill", function (d) {
+                return d.children ? "#555555" : map.get(d.keyword);
+            })
+            var parentnode = [];
+            var childnode = [];
+            for (var i in nodes) {
+                if (nodes[i].children)
+                    parentnode.push(nodes[i]);
+                else
+                    childnode.push(nodes[i]);
+            }
+            vis.selectAll("parenttext")
+                    .data(parentnode)
+                    .enter().append("svg:text")
+                    .attr("class", "tparent")
+                    .attr("x", function (d) {
+                        return d.x;
+                    })
+                    .attr("y", function (d) {
+                        return d.y;
+                    })
+                    .attr("dy", function (d) {
+                        return -d.r;
+                    })
+                    .attr("text-anchor", "middle")
+                    .text(function (d) {
+                        if (d.children)
+                            return d.magName;
+                    });
+            vis.selectAll("childtext")
+                    .data(childnode)
+                    .enter().append("svg:text")
+                    .attr("class", "tchild")
+                    .attr("font-size", d.r / 15 * 2)
+                    .attr("y", function (d) {
+                        return d.y - d.r / 15 * 2 * 3 / 2;
+                    })//splitByLine(d, d.r/1.4*2,14).length/2; })
+                    .attr("text-anchor", "middle")
+                    .attr("fill", function (d) {
+                        var ori = map.get(d.keyword);
+                        var reverse = reverseColor(ori);
+                        var newcolor = d3.rgb(reverse[0], reverse[1], reverse[2]);
+                        return newcolor.toString();
+                    })
+                    .selectAll("tspan")
+                    .data(function (d) {
+                        return splitByComma(d);
+                    })//splitByLine(d, d.r/1.4*2,14);})
+                    .enter()
+                    .append("tspan")
+                    .attr("x", function (d) {
+                        return d[1];
+                    })
+                    .attr("dy", "1em")
+                    .style("opacity", function (d) {
+                        return d[3] > 150 ? 1 : 0;
+                    })
+                    .text(function (d) {
+                        return d[0];
+                    });
+            d3.select(window).on("click", function () {
+                zoom1(root);
+            });
+        });
+        function zoom(d, i) {
+            var k = r / d.r / 4;
+            x.domain([d.x - 2 * d.r, d.x + 2 * d.r]);
+            y.domain([d.y - 2 * d.r, d.y + 2 * d.r]);
+            vis.selectAll("line").remove();
+            var t = vis.transition()
+                    .duration(d3.event.altKey ? 1000 : 750);
+
+            t.selectAll("circle")
+                    .attr("cx", function (d) {
+                        return x(d.x);
+                    })
+                    .attr("cy", function (d) {
+                        return y(d.y);
+                    })
+                    .attr("r", function (d) {
+                        return k * d.r;
+                    });
+
+            t.selectAll(".tparent")
+                    .attr("x", function (d) {
+                        return x(d.x);
+                    })
+                    .attr("y", function (d) {
+                        return y(d.y);
+                    })
+                    .attr("dy", function (d) {
+                        return -d.r;
+                    })
+                    .style("opacity", function (d) {
+                        return k * d.r > 55 ? 1 : 0;
+                    });
+
+            t.selectAll(".tchild")
+                    .attr("font-size", d.r * k / 15 * 2)
+                    .attr("y", function (d) {
+                        return y(d.y) - d.r * k / 15 * 2 * 1.5;
+                    })//splitByLine(d,k*d.r/1.4*2,14).length/2; })
+                    .style("opacity", function (d) {
+                        return k * d.r > 150 ? 1 : 0;
+                    });
+            t.selectAll("tspan")
+                    .attr("x", function (d) {
+                        return x(d[1]);
+                    })
+                    .style("opacity", function (d) {
+                        return k * d[3] > 150 ? 1 : 0;
+                    })
+
+            node = d;
+            d3.event.stopPropagation();
+        }
+
+        function zoom1(d, i) {
+            vis.selectAll("line").remove();
+            var k = r / d.r / 2;
+            x.domain([d.x - d.r, d.x + d.r]);
+            y.domain([d.y - d.r, d.y + d.r]);
+
+            var t = vis.transition()
+                    .duration(d3.event.altKey ? 1000 : 750);
+
+            t.selectAll("circle")
+                    .attr("cx", function (d) {
+                        return x(d.x);
+                    })
+                    .attr("cy", function (d) {
+                        return y(d.y);
+                    })
+                    .attr("r", function (d) {
+                        return k * d.r;
+                    });
+
+            t.selectAll(".tparent")
+                    .attr("x", function (d) {
+                        return x(d.x);
+                    })
+                    .attr("y", function (d) {
+                        return y(d.y);
+                    })
+                    .attr("dy", function (d) {
+                        return -d.r;
+                    })
+                    .style("opacity", function (d) {
+                        return k * d.r > 55 ? 1 : 0;
+                    });
+
+            t.selectAll(".tchild")
+                    .attr("font-size", d.r * k / 15 * 2)
+                    .attr("y", function (d) {
+                        return y(d.y) - d.r * k / 15 * 2 * 1.5;
+                    })//splitByLine(d,k*d.r/1.4*2,14).length/2; })
+                    .style("opacity", function (d) {
+                        return k * d.r > 150 ? 1 : 0;
+                    });
+
+            t.selectAll("tspan")
+                    .attr("x", function (d) {
+                        return x(d[1]);
+                    })
+                    .style("opacity", function (d) {
+                        return k * d[3] > 150 ? 1 : 0;
+                    })
+
+            node = d;
+            d3.event.stopPropagation();
+        }
+    }
+    packMap("../data/"+dataset[0] + ".json");
+    var datasetpicker = d3.select("#Header").selectAll(".button")
+            .data(dataset);
+    datasetpicker.enter()
+            .append("input")
+            .attr("value", function (d) {
+                return d
+            })
+            .attr("type", "button")
+            .attr("class", "button")
+            .on("click", function (d) {
+                thisyear = d.substring(5);
+                packMap("../data/"+d + ".json");
+                console.log(thisyear);
+                if(d=="2006")
+                {
+                    d3.select(".Year").text("Magzines in 2006");
+
+                }
+                else{
+                    d3.select(".Year").text("Magzines till "+thisyear);
+                }
+            });
+</script>
+</body>
+</html>

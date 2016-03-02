@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/overall.css">
+    <link type="text/css" rel="stylesheet" href="../css/gh-buttons.css">
+    <link type="text/css" rel="stylesheet" href="../css/prettify.css">
+    <script src="../js/d3.js"></script>
+    <script>
+        function changeBtn() {
+            var fir = document.getElementById("first");
+            var sec = document.getElementById("second");
+            var btn = document.getElementById("btn");
+            var bar = document.getElementById("bar");
+            var info = document.getElementById("info");
+            if(fir.style.display=='none') {
+                fir.style.display = 'block';
+                sec.style.display = 'none';
+                bar.style.display = 'none';
+                info.style.display = 'block';
+            }
+            else {
+                fir.style.display = 'none';
+                sec.style.display = 'block';
+                bar.style.display = 'block';
+                info.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Science Map</h1>
+<h2>基于文本可视化分析的研究领域主题地图</h2>
+<div style="position:absolute; right: 80px;">
+    <input type="button" value="Change Tab" class="button big" id="btn" onclick="changeBtn()" style="top: 100px;right: 50px;"/>
+
+    <div id="info" style="text-align: right;font-family: serif; top: 400px; position: absolute; right: 15px; width: 800px">
+        <div><h3 style="font-size: 35px;  ">Click Change Tab to see the percentage of different themes in each magazine.</h3></div>
+        <div><h3 style="font-size: 25px;  ">Click Button on the Top Left <br/>to see the main theme changes in different years.</h3>
+        <div><h3 style="font-size: 45px;color:#8B0000;">Circles with thick blue edge means <br/>such theme first appear in this year.</h3></div>
+        <h3 style="font-size: 25px">Every small circle in a Big one means a certain theme of a corresponding transaction.Move mouse over it you
+        can see clearly the name of such theme and if there are lines connected between circles ,which means that such kind of area appears in
+        both of these transactions.</h3></div>
+        <!--<div><h3></h3></div>-->
+    </div>
+    <div id="bar" style="display: none;">
+    </div>
+</div>
+<iframe src="pack.html" id="first" scrolling="no" frameborder="0"></iframe>
+<iframe src="testFile.html" style="display: none;" id="second"  scrolling="no" frameborder="0"></iframe>
+</body>
+<script>
+    var svg = d3.select("#bar").append("svg").attr("width", 200).attr("height", 1000);
+    var color = ["#87CEFA","#8B1A1A","#CDCD00"];
+    var data = ["TMM","TKDE","TVCG"];
+
+    for( var i = 0 ; i < 3 ; i++ ) {
+        svg.append("rect")
+                .attr("x", 0)
+                .attr("y", 600 + i * 100)
+                .attr("fill", color[i])
+                .attr("width", 100)
+                .attr("height", 25);
+        svg.append("text")
+                .attr("x", 50)
+                .attr("y", 590 + i * 100)
+                .text(data[i])
+                .style("font-size", "20px");
+//                .attr("width", 200)
+//                .attr("height", 50);
+    }
+
+</script>
+</html>

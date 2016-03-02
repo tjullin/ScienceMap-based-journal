@@ -1,0 +1,84 @@
+text {
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        text.tparent {
+            fill: #f00;
+            font-size: 25px;
+            pointer-events: none;
+        }
+
+        text.tchild {
+            pointer-events: none;
+        }
+        text.ledgend{
+            font-size: 13px;
+        }
+        text.important{
+            font-size: 17px;
+        }
+        circle {
+            pointer-events: all;
+        }
+
+        circle.parent {
+            fill-opacity: .1;
+        }
+
+        circle.parent:hover {
+            stroke-width: 0.5px;
+        }
+
+        rect {
+            z-index: -1;
+            stroke: #fff;
+            stroke-width: 2px;
+            pointer-events: none;
+        }
+
+        rect.ledgend {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+
+        line {
+            stroke: #00f;
+            stroke-width: 2px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        #Container {
+            width: 1530px;
+            position: absolute;
+            left: 1%;
+            top: 20%;
+            /*top: 0px;*/
+            /*left: 0px;*/
+        }
+
+        #Header {
+            height: 50px;
+            width: 1500px;
+        }
+
+        #Content {
+            overflow: auto;
+        }
+
+        #Content-Main {
+            overflow: auto;
+            width: 1280px;
+            float: left;
+        }
+
+        #Content-Left {
+            overflow: auto;
+            width: 250px;
+            float: left;
+        }
+
+        .Clear {
+            clear: both;
+        }

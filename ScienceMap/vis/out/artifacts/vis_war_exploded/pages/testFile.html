@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/polyStyle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <script src="../js/d3.js"></script>
+    <!--要放在所有script的最前面-->
+    <script>
+        var svg = d3.select("body")
+                .append("svg")
+                .attr("width", "2000px")
+                .attr("height", "1200px")
+                .style("position", "absolute")
+                .style("left", "5%")
+                .style("top","2%");
+    </script>
+    <script src="../js/dash.js"></script>
+    <script src="../js/text.js"></script>
+    <script src="../js/background.js"></script>
+    <script src="../js/brokenline.js"></script>
+    <script src = "../js/main.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/gh-buttons.css">
+    <link type="text/css" rel="stylesheet" href="../css/prettify.css">
+    <a class="button big" onclick="startMainRotate()" id="mainR" style="bottom: 450px; right: 150px; position: absolute;">Rotate</a>
+    <div><div><h3 style="font-size: 30px;  width: 550px;text-align: center; position: absolute;bottom: 200px;right: 100px">This page shows the percentage of each keyword appeared in transactions.
+        The closes to the center of the circle the more times such keyword appears. </h3></div></div>
+</body>
+<script>
+    var mainRotate;
+    var mainR = document.getElementById("mainR");
+    var subR = document.getElementById("subR");
+    function startMainRotate() {
+        if(!mainRotate) {
+            mainRotate = setInterval(rotate_main, 10);
+            mainR.innerHTML = 'STOP';
+        }
+        else {
+            clearInterval(mainRotate);
+            mainRotate = null;
+            mainR.innerHTML = "Rotate";
+        }
+    }
+
+    function rotate_main() {
+        rotate_background(0.02, 3000);
+        rotate_brokens(0.02, 3000);
+    }
+</script>
+</html>

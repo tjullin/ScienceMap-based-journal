@@ -1,0 +1,1260 @@
+{
+"magName": "",
+"children":
+[
+  {
+    "magName":"TVCG",
+    "children":
+    [
+  {
+    "keyword": "algorithm design and analysis",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "algorithms",
+    "magName": "TVCG",
+    "value": 30,
+    "year": "2006"
+  },
+  {
+    "keyword": "animals",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "animation",
+    "magName": "TVCG",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "bioinformatics",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "biology computing",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "cameras",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "cluster analysis",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "clustering algorithms",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "cognition",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2007"
+  },
+  {
+    "keyword": "collaboration",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "computational complexity",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "computational geometry",
+    "magName": "TVCG",
+    "value": 18,
+    "year": "2006"
+  },
+  {
+    "keyword": "computer animation",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "computer graphics",
+    "magName": "TVCG",
+    "value": 64,
+    "year": "2006"
+  },
+  {
+    "keyword": "computer simulation",
+    "magName": "TVCG",
+    "value": 25,
+    "year": "2006"
+  },
+  {
+    "keyword": "data analysis",
+    "magName": "TVCG",
+    "value": 36,
+    "year": "2006"
+  },
+  {
+    "keyword": "data mining",
+    "magName": "TVCG",
+    "value": 22,
+    "year": "2006"
+  },
+  {
+    "keyword": "data models",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2007"
+  },
+  {
+    "keyword": "data structures",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "data visualisation",
+    "magName": "TVCG",
+    "value": 118,
+    "year": "2006"
+  },
+  {
+    "keyword": "data visualization",
+    "magName": "TVCG",
+    "value": 112,
+    "year": "2006"
+  },
+  {
+    "keyword": "database management systems",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "databases, factual",
+    "magName": "TVCG",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "displays",
+    "magName": "TVCG",
+    "value": 26,
+    "year": "2006"
+  },
+  {
+    "keyword": "electronic mail",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "encoding",
+    "magName": "TVCG",
+    "value": 11,
+    "year": "2007"
+  },
+  {
+    "keyword": "feature extraction",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "filters",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "geographic information systems",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "geometry",
+    "magName": "TVCG",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "graph drawing",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "graph theory",
+    "magName": "TVCG",
+    "value": 15,
+    "year": "2006"
+  },
+  {
+    "keyword": "graph visualization",
+    "magName": "TVCG",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "graphical user interfaces",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "graphics",
+    "magName": "TVCG",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "guidelines",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "hardware",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "history",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "human computer interaction",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "humans",
+    "magName": "TVCG",
+    "value": 24,
+    "year": "2006"
+  },
+  {
+    "keyword": "image color analysis",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2007"
+  },
+  {
+    "keyword": "image enhancement",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "image interpretation, computer-assisted",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "image texture",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "imaging, three-dimensional",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "index terms&#8212",
+    "magName": "TVCG",
+    "value": 24,
+    "year": "2008"
+  },
+  {
+    "keyword": "information analysis",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "information storage and retrieval",
+    "magName": "TVCG",
+    "value": 27,
+    "year": "2006"
+  },
+  {
+    "keyword": "information visualization",
+    "magName": "TVCG",
+    "value": 48,
+    "year": "2006"
+  },
+  {
+    "keyword": "interaction",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2007"
+  },
+  {
+    "keyword": "interactive systems",
+    "magName": "TVCG",
+    "value": 17,
+    "year": "2006"
+  },
+  {
+    "keyword": "interactive visualization",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "internet",
+    "magName": "TVCG",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "layout",
+    "magName": "TVCG",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "mesh generation",
+    "magName": "TVCG",
+    "value": 11,
+    "year": "2008"
+  },
+  {
+    "keyword": "mice",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "models, biological",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "models, theoretical",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "multidimensional systems",
+    "magName": "TVCG",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "navigation",
+    "magName": "TVCG",
+    "value": 17,
+    "year": "2006"
+  },
+  {
+    "keyword": "pattern clustering",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "pattern recognition, automated",
+    "magName": "TVCG",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "performance analysis",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "pipelines",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "prototypes",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "rendering (computer graphics)",
+    "magName": "TVCG",
+    "value": 37,
+    "year": "2006"
+  },
+  {
+    "keyword": "scattering",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "semantic web",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "shape",
+    "magName": "TVCG",
+    "value": 17,
+    "year": "2006"
+  },
+  {
+    "keyword": "social network services",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "software",
+    "magName": "TVCG",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "solid modelling",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "sorting",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "statistical analysis",
+    "magName": "TVCG",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "statistics",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "taxonomy",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "telecommunication traffic",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "testing",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "three dimensional displays",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "time series",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2007"
+  },
+  {
+    "keyword": "time series analysis",
+    "magName": "TVCG",
+    "value": 7,
+    "year": "2007"
+  },
+  {
+    "keyword": "topology",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "tree graphs",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "uncertainty",
+    "magName": "TVCG",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "usability",
+    "magName": "TVCG",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "user interfaces",
+    "magName": "TVCG",
+    "value": 21,
+    "year": "2006"
+  },
+  {
+    "keyword": "user-computer interface",
+    "magName": "TVCG",
+    "value": 31,
+    "year": "2006"
+  },
+  {
+    "keyword": "visual analytics",
+    "magName": "TVCG",
+    "value": 21,
+    "year": "2006"
+  },
+  {
+    "keyword": "visual databases",
+    "magName": "TVCG",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "visualization",
+    "magName": "TVCG",
+    "value": 53,
+    "year": "2006"
+  }
+]
+  },
+  {
+    "magName":"TMM",
+    "children":
+    [
+  {
+    "keyword": "algorithm design and analysis",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "bandwidth",
+    "magName": "TMM",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "bit rate",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "cameras",
+    "magName": "TMM",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "computational complexity",
+    "magName": "TMM",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "computational modeling",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "computer vision",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "content-based retrieval",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "context",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "cryptography",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "data compression",
+    "magName": "TMM",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "data mining",
+    "magName": "TMM",
+    "value": 12,
+    "year": "2008"
+  },
+  {
+    "keyword": "databases",
+    "magName": "TMM",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "decoding",
+    "magName": "TMM",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "delay",
+    "magName": "TMM",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "detectors",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "discrete cosine transforms",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "dynamic programming",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2007"
+  },
+  {
+    "keyword": "encoding",
+    "magName": "TMM",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "face recognition",
+    "magName": "TMM",
+    "value": 10,
+    "year": "2007"
+  },
+  {
+    "keyword": "feature extraction",
+    "magName": "TMM",
+    "value": 51,
+    "year": "2007"
+  },
+  {
+    "keyword": "forward error correction",
+    "magName": "TMM",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "hidden markov models",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2007"
+  },
+  {
+    "keyword": "histograms",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2008"
+  },
+  {
+    "keyword": "human computer interaction",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "humans",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "image coding",
+    "magName": "TMM",
+    "value": 16,
+    "year": "2006"
+  },
+  {
+    "keyword": "image colour analysis",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "image matching",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2007"
+  },
+  {
+    "keyword": "image reconstruction",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "image representation",
+    "magName": "TMM",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "image resolution",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "image retrieval",
+    "magName": "TMM",
+    "value": 23,
+    "year": "2007"
+  },
+  {
+    "keyword": "image segmentation",
+    "magName": "TMM",
+    "value": 13,
+    "year": "2007"
+  },
+  {
+    "keyword": "image sequences",
+    "magName": "TMM",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "internet",
+    "magName": "TMM",
+    "value": 17,
+    "year": "2006"
+  },
+  {
+    "keyword": "learning (artificial intelligence)",
+    "magName": "TMM",
+    "value": 20,
+    "year": "2006"
+  },
+  {
+    "keyword": "markov processes",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "mobile communication",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "mobile computing",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "motion compensation",
+    "magName": "TMM",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "motion estimation",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "multimedia communication",
+    "magName": "TMM",
+    "value": 33,
+    "year": "2006"
+  },
+  {
+    "keyword": "multimedia computing",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "multimedia systems",
+    "magName": "TMM",
+    "value": 14,
+    "year": "2007"
+  },
+  {
+    "keyword": "music",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "object detection",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "optimisation",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "probability",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "psnr",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "quality of service",
+    "magName": "TMM",
+    "value": 22,
+    "year": "2006"
+  },
+  {
+    "keyword": "rate distortion theory",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "rate-distortion",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "real time systems",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "regression analysis",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2007"
+  },
+  {
+    "keyword": "rendering (computer graphics)",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "resource allocation",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "robustness",
+    "magName": "TMM",
+    "value": 16,
+    "year": "2006"
+  },
+  {
+    "keyword": "scalability",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "search problems",
+    "magName": "TMM",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "speech recognition",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "statistical analysis",
+    "magName": "TMM",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "streaming media",
+    "magName": "TMM",
+    "value": 40,
+    "year": "2006"
+  },
+  {
+    "keyword": "support vector machines",
+    "magName": "TMM",
+    "value": 10,
+    "year": "2007"
+  },
+  {
+    "keyword": "telecommunication congestion control",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "telecommunication traffic",
+    "magName": "TMM",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "video coding",
+    "magName": "TMM",
+    "value": 45,
+    "year": "2006"
+  },
+  {
+    "keyword": "video retrieval",
+    "magName": "TMM",
+    "value": 15,
+    "year": "2007"
+  },
+  {
+    "keyword": "video sequence",
+    "magName": "TMM",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "video sequences",
+    "magName": "TMM",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "video signal processing",
+    "magName": "TMM",
+    "value": 35,
+    "year": "2006"
+  },
+  {
+    "keyword": "video streaming",
+    "magName": "TMM",
+    "value": 29,
+    "year": "2006"
+  },
+  {
+    "keyword": "wireless channels",
+    "magName": "TMM",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "wireless networks",
+    "magName": "TMM",
+    "value": 8,
+    "year": "2008"
+  }
+]
+  },
+  {
+    "magName":"TKDE",
+    "children":
+    [
+  {
+    "keyword": "algorithm design and analysis",
+    "magName": "TKDE",
+    "value": 16,
+    "year": "2006"
+  },
+  {
+    "keyword": "association rules",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "classification",
+    "magName": "TKDE",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "clustering",
+    "magName": "TKDE",
+    "value": 12,
+    "year": "2008"
+  },
+  {
+    "keyword": "computational complexity",
+    "magName": "TKDE",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "computer aided instruction",
+    "magName": "TKDE",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "costs",
+    "magName": "TKDE",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "data analysis",
+    "magName": "TKDE",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "data mining",
+    "magName": "TKDE",
+    "value": 74,
+    "year": "2006"
+  },
+  {
+    "keyword": "database management systems",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2008"
+  },
+  {
+    "keyword": "database systems",
+    "magName": "TKDE",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "databases",
+    "magName": "TKDE",
+    "value": 12,
+    "year": "2006"
+  },
+  {
+    "keyword": "decision making",
+    "magName": "TKDE",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "graph theory",
+    "magName": "TKDE",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "indexes",
+    "magName": "TKDE",
+    "value": 11,
+    "year": "2007"
+  },
+  {
+    "keyword": "indexing",
+    "magName": "TKDE",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "information retrieval",
+    "magName": "TKDE",
+    "value": 13,
+    "year": "2006"
+  },
+  {
+    "keyword": "internet",
+    "magName": "TKDE",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "kernel",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "knowledge based systems",
+    "magName": "TKDE",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "knowledge representation",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "learning (artificial intelligence)",
+    "magName": "TKDE",
+    "value": 18,
+    "year": "2006"
+  },
+  {
+    "keyword": "machine learning",
+    "magName": "TKDE",
+    "value": 14,
+    "year": "2006"
+  },
+  {
+    "keyword": "mathematical model",
+    "magName": "TKDE",
+    "value": 8,
+    "year": "2007"
+  },
+  {
+    "keyword": "monitoring",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "nearest neighbor searches",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2007"
+  },
+  {
+    "keyword": "ontologies",
+    "magName": "TKDE",
+    "value": 7,
+    "year": "2006"
+  },
+  {
+    "keyword": "ontologies (artificial intelligence)",
+    "magName": "TKDE",
+    "value": 8,
+    "year": "2006"
+  },
+  {
+    "keyword": "partitioning algorithms",
+    "magName": "TKDE",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "pattern classification",
+    "magName": "TKDE",
+    "value": 18,
+    "year": "2006"
+  },
+  {
+    "keyword": "pattern clustering",
+    "magName": "TKDE",
+    "value": 22,
+    "year": "2008"
+  },
+  {
+    "keyword": "probability",
+    "magName": "TKDE",
+    "value": 7,
+    "year": "2008"
+  },
+  {
+    "keyword": "query processing",
+    "magName": "TKDE",
+    "value": 39,
+    "year": "2006"
+  },
+  {
+    "keyword": "relational databases",
+    "magName": "TKDE",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "search engines",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  },
+  {
+    "keyword": "semantic web",
+    "magName": "TKDE",
+    "value": 11,
+    "year": "2006"
+  },
+  {
+    "keyword": "semantics",
+    "magName": "TKDE",
+    "value": 16,
+    "year": "2007"
+  },
+  {
+    "keyword": "spatial databases",
+    "magName": "TKDE",
+    "value": 10,
+    "year": "2006"
+  },
+  {
+    "keyword": "support vector machines",
+    "magName": "TKDE",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "text analysis",
+    "magName": "TKDE",
+    "value": 9,
+    "year": "2006"
+  },
+  {
+    "keyword": "web services",
+    "magName": "TKDE",
+    "value": 6,
+    "year": "2006"
+  }
+]
+  }
+]
+}

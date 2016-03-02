@@ -1,0 +1,264 @@
+<html>
+<meta charset="utf-8">
+<style>
+    text{
+        font: 17px sans-serif bold;
+    }
+    .axis path,
+    .axis line{
+        fill: none;
+        stroke: gray;
+        shape-rendering: crispEdges;
+    }
+
+    .axis text
+    {
+        font : 20px sans-serif bold;
+    }
+
+    .dash path{
+        stroke: black;
+    }
+
+    .circle_text text {
+        fill: #8B2252;
+    }
+</style>
+<body>
+    <!--<h1>Xue Pang zi </h1>-->
+    <script src="../js/d3.js"></script>
+    <script>
+        //声明一个
+        function Magazine ( color , shape , rate )
+        {
+            this.color = color;
+            this.shape = shape;
+            this.rate = rate;
+        }
+
+        function Points ( a , b )
+        {
+            this.x = a;
+            this.y = b;
+            return this;
+        }
+
+        function draw_dash ( sx , sy , ex , ey , d , a  )
+        {
+            var linePath = d3.svg.line();
+            var points = new Array();
+            var dx = d*Math.cos(a);
+            var dy = d*Math.sin(a);
+            var r = Math.sqrt ( (ex-sx)*(ex-sx)+(ey-sy)*(ey-sy) );
+            for ( var i = 0 ; d*i <= r ; i++ ) {
+                points.push ([sx + dx * i, sy + dy * i]);
+            }
+            for ( var i = 1 ; i < points.length ; i++ ) {
+                var temp = [ points[i-1] , points[i]];
+                if( i%2 )
+                    dash_group.append("path")
+                            .attr("class" , "axis")
+                            .attr("d", linePath(temp))
+                            .attr("stroke", "pink")
+                            .attr("stroke-width", "3px")
+                            .attr("fill", "none");
+                else
+                    svg.append("path")
+                            .attr("d",linePath(temp))
+                            .attr("stroke","white")
+                            .attr("stroke-width","3px")
+                            .attr("fill","none");
+            }
+        }
+
+		function draw_char ( ch, x , y , angle , r )
+		{
+			circle_text_group.append("text")
+				.attr("fill" ,"red")
+				.attr("font-size","18px")
+				.attr("text-anchor","middle")
+                .attr("rotate", ""+(angle/(2*Math.acos(-1))*360) )
+				.attr("x" , x )
+				.attr("y" , y )
+				.attr("dx", r*Math.cos(angle))
+				.attr("dy", r*Math.sin(angle))
+				.text(ch);
+		}
+
+        function draw_text ( name , x , y , angle , r )
+        {
+            var dd = 8;
+            var start = 0;
+            var end = name.length-1;
+            for ( var i = start ; i <= end ; i++ )
+                draw_char ( name.substr(i,1) , x , y , angle , dd*i+r );
+        }
+
+        function draw_background ( vertex, cx , cy  , r )
+        {
+            var x = vertex.length;
+            var PI = Math.acos(-1.0);
+            var points = new Array();
+            var angle = 2.0*PI/x;
+            //绘制边框
+            for ( var i = 0 ; i < x ; i++ )
+            {
+                var tx = cx + r*Math.cos(angle*i);
+                var ty = cy + r*Math.sin(angle*i);
+                points.push ( new Points(tx,ty));
+                draw_dash ( cx , cy , tx , ty , 3 ,angle*i );
+                draw_text ( vertex[i] , tx , ty , angle*i , 20 );
+            }
+            for ( var i = 0 ; i < points.length ; i++ )
+            {
+                var j = (i+1)%points.length;
+                var a = Math.atan2( points[j].y-points[i].y , points[j].x - points[i].x );
+                draw_dash ( points[i].x , points[i].y , points[j].x , points[j].y , 3 , a  );
+            }
+            var cnt_part = 5;
+            var num = 10;
+            var part = r/cnt_part;
+            var linePath = d3.svg.line();
+            for ( var i = 1 ; i <= cnt_part ; i++ )
+            {
+				var points = new Array();
+				for ( var j = 0 ; j < x ; j++ )
+					points.push ( new Points ( cx+part*i*Math.cos(angle*j) , cy+part*i*Math.sin(angle*j) ) );
+				//console.log(points.length );
+				for ( var j = 0 ; j < points.length ; j++ )
+				{
+					var k = (j+1)%points.length;
+					var a = Math.atan2 ( points[k].y-points[j].y , points[k].x - points[j].x );
+					draw_dash ( points[j].x , points[j].y , points[k].x , points[k].y , 2 , a );
+				}
+                axis.append("text")
+                        .attr("fill","#EE9A00")
+                        .attr("text-achor","middle")
+                        .attr("font-weight","bold")
+                        .attr("x" , cx + part*i )
+                        .attr("y" , cy )
+                        .attr("dx" , 0 )
+                        .attr("dy" , -5 )
+                        .text(50-num*i + "%");
+			}
+        }
+
+
+		function draw_foreground ( color , data , cx , cy , r , width )
+		{
+			var linePath = d3.svg.line();
+			var PI = Math.acos(-1.0);
+			var points = new Array();
+			var angle = 2.0*PI/data.length;
+			for ( var i = 0 ; i < data.length ; i++ )
+			{
+				var tr = data[i]/50*r;
+				var tx = cx + tr*Math.cos(angle*i);
+				var ty = cy + tr*Math.sin(angle*i);
+				points.push( [tx,ty] );
+			}
+			points.push( points[0] );
+			svg.append("path")
+				.attr("d",linePath(points))
+				.attr("stroke" , color )
+				.attr("stroke-width", width )
+				.attr("fill","none");
+		}
+    </script>
+    <script>
+        //生成svg图
+        var width = 1200;
+        var height = 1200;
+        var svg = d3.select("body")
+                .append("svg")
+                .attr("width" , width )
+                .attr("height", height );
+        var dash_group = svg.append("g")
+                            .attr("class","dash");
+        var circle_text_group = svg.append("g")
+                            .attr("class","circle_text");
+
+        var axis = svg.append("g")
+                .attr("class","axis");
+
+        //设置外边距
+        var padding = {
+            top:33,
+            right:33,
+            bottom:33,
+            left:33
+        };
+        //端点的信息
+        //var vertex= ["图像处理","可视化","WEB开发","形式化方法","软件工程","编译原理","操作系统原理","UI界面设计" ];
+        //draw_dash ( 100 , 100 , 300 , 300 , 5 , 0  );
+        //draw_background ( vertex , 400 , 400 , 300 );
+        //var size;
+        var cx=500,cy=470,r=300;
+        d3.json("../data/names.json",function(error,names)
+        {
+            var size;
+            console.log( "Total : " + names.length);
+            draw_background( names , cx , cy , r );
+            size = names.length;
+            d3.json("/data/tmm.json",function(error,data)
+            {
+                console.log( "Tmm : "+ data.length);
+                var out = new Array();
+                for ( var i = 0 ; i < size ; i++  )
+                    out.push ( 49 );
+                for ( var i = 0 ; i < data.length ; i++ )
+                {
+                    var key = data[i]["keyword"];
+                    var value = data[i]["value"];
+                    var x = names.indexOf(key);
+                    out[x] = value/185*100;
+                    if ( out[x] > 48 )
+                        out[x] = 48;
+                    out[x] = 50 - out[x];
+                }
+                draw_foreground( "#87CEFA" , out , cx , cy , r , "9px" );
+            });
+            d3.json("../data/tvcg.json",function(error,data)
+            {
+                console.log( "TKDE : " + data.length );
+                var out = new Array();
+                for ( var i = 0 ; i < size ; i++  )
+                    out.push ( 49 );
+                for ( var i = 0 ; i < data.length ; i++ )
+                {
+                    var key = data[i]["keyword"];
+                    var value = data[i]["value"];
+                    var x = names.indexOf(key);
+                    out[x] = value/161*100;
+                    if ( out[x] > 48 )
+                        out[x] = 48;
+                    out[x] = 50 - out[x];
+                }
+                draw_foreground( "#CDCD00" , out , cx , cy , r , "5px");
+            });
+            d3.json("../data/tkde.json",function(error,data)
+            {
+                console.log( "TKDE : " + data.length );
+                var out = new Array();
+                for ( var i = 0 ; i < size ; i++  )
+                    out.push ( 49 );
+                for ( var i = 0 ; i < data.length ; i++ )
+                {
+                    var key = data[i]["keyword"];
+                    var value = data[i]["value"];
+                    var x = names.indexOf(key);
+                    out[x] = value/139*100;
+                    if ( out[x] > 48 )
+                        out[x] = 48;
+                    out[x] = 50-out[x];//所有图聚合时逆向
+                }
+                draw_foreground( "#8B1A1A" , out , cx , cy , r , "3px");
+            });
+        });
+		//var data = [20,30,10,8,11,23,45,13];
+        //draw_foreground ( "blue" , data , 500 , 500 , 400 );
+        //var tmm = 185;
+
+    </script>
+</body>
+</html>
