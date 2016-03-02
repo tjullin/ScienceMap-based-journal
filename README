@@ -1,0 +1,14 @@
+IF you prefer Chinese description or more details,
+   you can find a word document in directory vis.
+1.Description:
+ We use the data based on the abstract from the paper on TVCG and other top science journal about visualization and graphics to find the relation betweens the two fields.
+2.Goal:
+	 To help people take acknowlege of the independence of visualization. It's different with graphics, and it should be evluate equals to graphics.And thismethod can be taken use to show relations for more fields to help the birth of cross discipline
+3. Our work:
+	a) we use json to keep our data, we use java and perl to make the data clean with regulations and other techs.
+	b) we use javascript( create a new framework to show data) and D3.js to help ther represention of the results
+4. about us:
+	1)gmy from tju
+	2)wsy from tju
+	3)llin from tju
+	
